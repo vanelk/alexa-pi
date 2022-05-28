@@ -25,3 +25,6 @@ wakeworker.stdout.on('data', (data) => {
         });
     }
 });
+wakeworker.stderr.on('data', (data)=>{
+    throw Error(data.toString());
+})

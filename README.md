@@ -13,11 +13,13 @@ To install alexa on your raspberry pi you'll need:
 Once you have installed your os, run:
 ```
 cd $HOME
-mkdir alexa
-cd alexa
+mkdir /opt/alexa
+cd /opt/alexa
+sudo chown -R pi:pi ../
 ```
 ### Step 1: Installing Device SDK
-Follow instructions to install sdk from [amazon's website](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/raspberry-pi.html) or use these [instructions](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/raspberry-pi-script.html) to build with script.
+Follow instructions to install sdk from [amazon's website](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/raspberry-pi.html).
+Remember to replace `/home/pi/` with `/opt/alexa` when running any script from the guide above.
 
 #### Notes
 - You'll need to [register a product](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/register-a-product-with-avs.html).
@@ -32,7 +34,6 @@ Follow instructions to install sdk from [amazon's website](https://developer.ama
 ### Step 2: Install NodeJS
 
 ```bash
-cd $HOME/sdk_folder/third-party
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
@@ -43,7 +44,7 @@ sudo apt-get install -y nodejs
 
 ```bash
 git clone https://github.com/vanelk/alexa-pi.git
-cd  alexa-pi.git
+cd  alexa-pi
 ```
 
 

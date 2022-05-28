@@ -7,7 +7,7 @@ After=network.target network-online.target sound.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/node /home/alexa/alexa-pi/app.js
+ExecStart=/usr/bin/node /opt/alexa/alexa-pi/app.js
 
 User=alexapi
 Group=alexapi
