@@ -9,9 +9,15 @@ To install alexa on your raspberry pi you'll need:
 - pip3
 
 ## Installation
-
+### Step 0: Creating project directory
+Once you have installed your os, run:
+```
+cd $HOME
+mkdir alexa
+cd alexa
+```
 ### Step 1: Installing Device SDK
-Once you have installed your os, follow instructions to install sdk from [amazon's website](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/raspberry-pi.html) or use these [instructions](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/raspberry-pi-script.html) to build with script.
+Follow instructions to install sdk from [amazon's website](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/raspberry-pi.html) or use these [instructions](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/raspberry-pi-script.html) to build with script.
 
 #### Notes
 - You'll need to [register a product](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/register-a-product-with-avs.html).
