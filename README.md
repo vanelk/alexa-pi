@@ -23,6 +23,7 @@ Follow instructions to install sdk from [amazon's website](https://developer.ama
 - You'll need to [register a product](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/register-a-product-with-avs.html).
 - If you get stuck at this step, use the amazon's troubleshooting [guide](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/troubleshooting.html#raspberry).
 - Make sure the sample app runs from installation guide properly before proceeding.
+- Personnally I had my pi freeze during my installation so I used this section from the [toubleshooting guide](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/troubleshooting.html#issue-device-freezes-and-install-process-stops)
 
 #### Further Notes.
 - In order to interact with alexa-pi by saying *Alexa* you need a wake word engine.
@@ -63,3 +64,13 @@ Try saying *Alexa* followed by your query. For example:
 - *Alexa, what is the time.*
 - *Alexa, tell me a joke.*
 - *Alexa, tell who is Johnny Depp.*
+
+## Optional
+
+### Running alexa-pi on device start
+To run the script on device start we will use the systemd service.
+```bash
+sudo cp ./scripts/alexapi.service /etc/systemd/system
+systemctl start alexapi
+systemctl enable alexapi 
+```
