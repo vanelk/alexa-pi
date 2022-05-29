@@ -18,8 +18,8 @@ cd /opt/alexa
 sudo chown -R pi:pi ../
 ```
 ### Step 1: Installing Device SDK
-Follow instructions to install sdk from [amazon's website](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/raspberry-pi.html).
-Remember to replace `/home/pi/` with `/opt/alexa` when running any script from the guide above.
+Follow instructions to install alexa device sdk from [amazon's website](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/raspberry-pi.html).
+Remember to replace `/home/pi/` with `/opt/alexa` when running any script from the guide bellow.
 
 #### Notes
 - You'll need to [register a product](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/register-a-product-with-avs.html).
@@ -38,7 +38,7 @@ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-### Step3: Install Dependencies and final configurations
+### Step 3: Clone and setup repo
 
 #### a. Clone repo and enter into it
 
@@ -85,7 +85,11 @@ Check if it is actually running
 sudo systemctl start alexapi
 systemctl status alexapi
 ```
-If you see running just press `q` to exit and run
+If you see `Running` just press `q` to exit and run
 ```bash
 sudo systemctl enable alexapi
+```
+After this you are all set and after rebooting your pi you should hear the *hello* sound indicating the app have started
+```bash
+reboot
 ```
