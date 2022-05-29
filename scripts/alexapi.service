@@ -3,19 +3,19 @@ Description=Alexa client for raspberry pi
 
 Wants=network.target network-online.target
 Requires=sound.target
-After=network.target network-online.target sound.target
+After=network.target network-online.target sound.target vasd.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/node /opt/alexa/alexa-pi/app.js
+ExecStartPre=/usr/bin/pulseaudio --start --log-target=syslog --system=false 
+ExecStart=/usr/bin/bash -c "node /opt/alexa/alexa-pi/app.js"
 
-User=alexapi
-Group=alexapi
+User=pi
+Group=pi
 
-ProtectHome=true
-RuntimeDirectory=AlexaPi
+RuntimeDirectory=alexapi
 RuntimeDirectoryMode=0770
-WorkingDirectory=/run/AlexaPi
+WorkingDirectory=/run/alexapi
 
 [Install]
 WantedBy=default.target

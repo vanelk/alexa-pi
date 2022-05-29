@@ -55,6 +55,12 @@ pip install -r requirements.txt
 npm install
 ```
 
+#### c. Install Audio player to play sound effects
+
+```bash
+sudo apt install mpg123
+```
+
 ## Running
 In folder where you cloned this project, run:
 ```bash
@@ -71,7 +77,15 @@ Try saying *Alexa* followed by your query. For example:
 ### Running alexa-pi on device start
 To run the script on device start we will use the systemd service.
 ```bash
-sudo cp ./scripts/alexapi.service /etc/systemd/system
-systemctl start alexapi
-systemctl enable alexapi 
+sudo install -Dm644 ./scripts/alexapi.service /usr/lib/systemd/system/alexapi.service
+sudo systemctl daemon-reload
+```
+Check if it is actually running
+```bash
+sudo systemctl start alexapi
+systemctl status alexapi
+```
+If you see running just press `q` to exit and run
+```bash
+sudo systemctl enable alexapi
 ```
